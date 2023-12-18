@@ -1,0 +1,140 @@
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    font-family: Arial, sans-serif;
+    justify-content: center;
+    align-items: center;
+    background-color: #f4f4f4; /* Light grey background */
+}
+
+/* BUTTONS */
+.buttonsDiv {
+    width: 200px;
+    text-align: center; 
+    border: 2px solid #696969;
+    border-radius: 5px; /* Rounded corners */
+    background: #696969;
+    padding: 10px 20px; /* Increased padding */
+    margin: 0;
+    margin-right: auto; /* Adjusted margin */
+    color: white;
+    font-weight: 600;
+    align-content: center;
+    background-color: #696969; /* Harmonious background color */
+    display: inline-block; /* Adjusted display property */
+    font-size: 16px; /* Font size adjustment */
+    transition: background-color 0.3s, color 0.3s; /* Smooth transition */
+}
+
+/* BUTTONS HOVER */
+.buttonsDiv:hover {
+    background: whitesmoke;  
+    color: #696969;
+    border-color: #696969; /* Border color transition */
+}
+
+/* INSTRUCTIONS */
+.instructionsDiv {
+    display: none; /* Add this line to initially hide all instruction divs */
+    padding: 40px;
+    margin: 0 auto;
+    max-width: 800px; /* Sets a maximum width to maintain readability */
+    background-color: white; /* White background for the instructions */
+    border-radius: 10px; /* Soft rounded corners */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Soft shadow around the div for depth */
+    text-align: justify;
+    line-height: 1.6; /* Improved line height for readability */
+    font-size: 16px; /* Larger font size for better readability */
+}
+
+.containerDiv {
+    text-align: right; /* Right aligns the buttons */
+    padding-bottom: 20px; /* Adds some space below the buttons */
+}
+
+/* rule to ensure buttons are visible when the instructions div is visible */
+.instructionsDiv .buttonsDiv {
+	display: inline-block; 
+}
+
+/* EXPERIMENT CANVAS */
+
+#experimentContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.canvas-container {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+canvas {
+    border: 1px solid #000;
+    background-color: white;
+}
+
+#startDemosButton {
+    margin: 20px;
+    text-align: center;
+    display: none;
+}
+
+/* DEMOGRAPHICS */
+
+.demoInfoDiv {
+    display: none;
+    overflow-y: auto;
+    max-height: 80vh;
+    background-color: white; /* Light grey background */
+    padding: 20px; /* Padding around the content */
+    border-radius: 8px; /* Rounded corners */
+    margin: 0 auto; /* Center the div */
+    max-width: 800px; /* Set a maximum width */
+    font-family: Arial, sans-serif; /* Set a readable font */
+}
+
+.demoInfoDiv p {
+    margin-bottom: 10px; /* Add some space between paragraphs */
+}
+
+.demoInfoDiv fieldset {
+    border: 1px solid #ccc; /* Light border around fieldset */
+    padding: 10px; /* Padding inside fieldset */
+    margin-bottom: 20px; /* Space between fieldsets */
+}
+
+.demoInfoDiv legend {
+    font-weight: bold; /* Bold text for legend */
+}
+
+.demoInfoDiv label {
+    display: block; /* Display label as block */
+    margin-bottom: 5px; /* Space under the label */
+}
+
+.demoInfoDiv select, 
+.demoInfoDiv input[type="text"], 
+
+.demoInfoDiv .indent {
+    margin-left: 20px; /* Indent nested elements */
+}
+
+.demoInfoDiv input[type="checkbox"] {
+    width: auto; /* Change from 100% to auto */
+    margin-right: 10px; /* Ensure there is some space between the checkbox and the label */
+}
+
+.demoInfoDiv label {
+    display: inline-block; /* Change from block to inline-block for labels next to checkboxes */
+}
+
+.checkbox-item {
+    display: flex;
+    align-items: center;
+}
+

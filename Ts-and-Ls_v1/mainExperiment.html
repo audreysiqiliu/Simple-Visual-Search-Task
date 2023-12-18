@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visual Search Experiment</title>
+    <link rel="stylesheet" type="text/css" href="mainExperiment.css">
+</head>
+<body>
+    <!-------------------------------------------->
+    <!-- INSTRUCTIONS PAGE 1 (WELCOME) DIV -->
+    <!-------------------------------------------->
+    <div id="instructions_page1" class="instructionsDiv">
+        <p style="text-align: center;"><strong>
+            Thank you for starting this experiment.
+            <br>We can only compensate workers who have completed all phases of the task.
+            <br>Do NOT exit this window until you reach the final submission screen which confirms that your data has been uploaded to our server!
+        </strong></p>
+        <hr />
+        <p>Please read the following instructions carefully.</p>
+        <p>
+            Complete this experiment in full screen mode on a laptop or desktop computer. 
+            <br>It will not work on a mobile or touch screen device. A keyboard, mouse/trackpad, and a big enough screen are required.
+        </p>
+        <p>There will be a total of <span id="total-trials">XXXX</span> trials, and we estimate that the experiment will take approximately <span id="estimated-time">XXXX</span> minutes to complete.</p>
+        <hr />
+        <p><i>Click the 'NEXT' button below for instructions.</i></p> 
+        <!-- NEXT BUTTON -->
+        <div class="containerDiv">
+            <input type="submit" id="next1Button" class="buttonsDiv" value="NEXT" style="width: 200px;" onclick="show_instructions2()"/>
+        </div>
+    </div>
+
+    <!-------------------------------------------->
+    <!-- INSTRUCTIONS PAGE 2 (DESCRIBE STIMULI) DIV-->
+    <!-------------------------------------------->
+    <div id="instructions_page2" class="instructionsDiv">
+        <p style="font-weight: normal">On each trial, you will see many bars that look like <strong>"L"</strong> shapes.</p>
+        <p style="font-weight: normal">Your task is to find any <strong> "T" </strong> shapes amidst the <strong> "L" </strong> shapes.</p>
+        <hr />
+        <p> Here are examples of both <strong> "L" </strong> and <strong> "T" </strong> shapes.</p>
+        <p>  
+            <div style="display: flex; justify-content: space-around;">
+                <div style="display: flex; flex-direction: column; align-items: center;">
+                    <span><u><strong><i>"L" Shapes</i></strong></u></span>
+                    <img id="Example_Ls" class="exampleSearch" src="" width=250>
+                </div>
+                <div style="display: flex; flex-direction: column; align-items: center;">
+                    <span><u><strong><i>"T" Shapes</i></strong></u></span>
+                    <img id="Example_Ts" class="exampleSearch" src="" width=250>
+                </div>
+            </div>
+        </p> 
+        <p style="font-weight: normal">Please note that both the  <i>rotation</i> and <i>darkness</i> level of the <strong>"L"</strong> and <strong>"T" </strong>shapes can vary, so you may need to look very closely to find the targets. </p>
+        <hr />
+        <p><i>Click the 'NEXT' button below for further instructions.</i></p>
+        <!-- NEXT BUTTON -->
+        <div class="containerDiv">
+            <input type="submit" id="next2Button" class="buttonsDiv" value="NEXT" style="width: 200px;" onclick="show_instructions3()"/>
+        </div>
+    </div>
+
+    <!-------------------------------------------->
+    <!-- INSTRUCTIONS PAGE 3 (DESCRIBE TRIAL TYPES) DIV-->
+    <!-------------------------------------------->
+    <div id="instructions_page3" class="instructionsDiv"> 
+        <p style="font-weight: normal">For this experiment, the array will either contain <strong>one (or more) "T"s</strong> or <strong>no "T"s</strong>.</p>
+        <p>For example:</p>
+        <p>  
+            <div style="display: flex; justify-content: space-around;">
+                <div style="display: flex; flex-direction: column; align-items: center;">
+                    <span><u><strong><i>"T" - Present Trial</i></strong></u></span>
+                    <img id="Example_TargetPresent" class="exampleSearch" src="" width=250>
+                </div>
+                <div style="display: flex; flex-direction: column; align-items: center;">
+                    <span><u><strong><i>"T" - Absent Trial</i></strong></u></span>
+                    <img id="Example_TargetAbsent" class="exampleSearch" src="" width=250>
+                </div>
+            </div>            
+        </p> 
+        <hr />
+        <p><i>Click the 'NEXT' button below for further instructions.</i></p> 
+        <!-- NEXT BUTTON -->
+        <div class="containerDiv">
+            <input type="submit" id="next3Button" class="buttonsDiv" value="NEXT" style="width: 200px;" onclick="show_instructions4()"/>  
+        </div>
+    </div>
+
+    <!-------------------------------------------->
+    <!-- INSTRUCTIONS PAGE 4 (DESCRIBE TARGET SELECTION) DIV-->
+    <!-------------------------------------------->
+    <div id="instructions_page4" class="instructionsDiv">
+        <p>If you find that the <strong>array contains a "T"</strong>, use your mouse to <strong>click</strong>  on each <strong>"T"</strong> that you find. An empty circle will appear at each spot you click.</p>
+        <p style="text-align: center;">
+            <img id="ClickProgression" class="exampleSearch" src="" width=200>
+        </p>
+        <p>When you have clicked on all “T”s, press the <strong>SPACEBAR</strong> to continue.</p>
+        <p>If you find that the array <strong>does NOT contain a "T"</strong>, press the <strong>SPACEBAR</strong>.</p>
+        <hr />
+        <p><i>Click the 'NEXT' button below for further instructions.</i></p> 
+        <!-- NEXT BUTTON -->
+        <div class="containerDiv">
+            <input type="submit" id="next4Button" class="buttonsDiv" value="NEXT" style="width: 200px;" onclick="show_instructions5()"/>  
+        </div>
+    </div>
+
+    <!-------------------------------------------->
+    <!-- INSTRUCTIONS PAGE 5 (DESCRIBE FEEDBACK) DIV-->
+    <!-------------------------------------------->
+    <div id="instructions_page5" class="instructionsDiv">
+        <p> After pressing the spacebar, all empty circles will fill with a color that reflects whether they were correct or incorrect selections. </p>
+        <p> A <strong>green circle indicates a correct target selection</strong>, and a <strong>red circle indicates an incorrect selection</strong>. Any missed targets will be <strong>circled</strong>. </p>
+        <p> For example:</p>
+        <div style="display: flex; justify-content: center;">
+            <div style="flex: 1; text-align: center;">
+                <strong><u>Correct</u></strong>
+                <p><img id="CorrectClick" class="exampleSearch" src="" width=75></p>
+            </div>
+            <div style="flex: 1; text-align: center;">
+                <strong><u>Incorrect</u></strong>
+                <p><img id="IncorrectClick" class="exampleSearch" src="" width=75></p>
+            </div>
+            <div style="flex: 1; text-align: center;">
+                <strong><u>Missed</u></strong>
+                <p><img id="MissedTarget" class="exampleSearch" src="" width=75></p>
+            </div>
+        </div>        
+        <p><i>If you click close to the <strong>"T"</strong>, it will still count, so there is no need to re-click:</i></p>
+        <p style="text-align: center;">	
+            <img id="DoubleClick_Feedback" class="exampleSearch" src="" width=200> 
+        </p>
+        <hr />
+        <p> <i>Click the 'NEXT' button below for further instructions.</i> </p> 
+    <!-- NEXT BUTTON -->
+        <div class="containerDiv">      
+            <input type="submit" id="next3Button" class="buttonsDiv" value="NEXT" style="width: 200px;" onclick="show_instructions6()"/>  
+        </div>
+    </div>
+        
+    <!-------------------------------------------->
+    <!-- INSTRUCTIONS PAGE 6 (DESCRIBE HOVER TO PROCEED) DIV-->
+    <!-------------------------------------------->
+    <div id="instructions_page6" class="instructionsDiv"> 
+        <p>After the feedback is displayed for each trial, a circle will appear at the center of the display. </p>
+        <p><strong>Hover your mouse cursor over the circle to proceed to the next trial:</strong> </p>
+        <p style="text-align: center;">
+            <img id="Hover_Cursor" class="exampleSearch" src="" width=300>
+        </p>
+        <hr />
+        <p><i>Click the 'NEXT' button below for further instructions.</i></p> 
+        <!-- NEXT BUTTON -->
+        <div class="containerDiv">
+            <input type="submit" id="next3Button" class="buttonsDiv" value="NEXT" style="width: 200px;" onclick="show_instructions7()"/>  
+        </div>
+    </div>
+
+    <!-------------------------------------------->
+    <!-- INSTRUCTIONS PAGE 7 (OVERVIEW BEFORE PRACTICE) DIV-->
+    <!-------------------------------------------->
+    <div id="instructions_page7" class="instructionsDiv"> 
+        <p> On each trial, you will have <strong id="time-limit">30 seconds</strong> to identify any <strong>"T"</strong> shapes you find.</p>
+        <p> If you take longer than this, the experiment will move on to the feedback presentation.	</p>
+        <hr />
+        <p> <i>To proceed to the practice trials, click the button below.</i></p>
+        <!-- START PRACTICE BUTTON -->
+        <div class="containerDiv">
+            <input type="submit" id="startExperimentButton" class="buttonsDiv" value="START EXPERIMENT" style="width: 200px;" onclick="startBlock()"/>
+        </div>
+    </div>
+
+    <!-------------------------------------------->
+    <!-- MAIN EXPERIMENT DIV -->
+    <!-------------------------------------------->
+    <div id="experimentContainer">
+        <!-- experiment canvas -->
+        <div class="canvas-container">
+            <canvas id="canvas" width="800" height="600"></canvas>
+        </div>
+        <!-- button to start demographics survey -->
+        <div class="containerDiv">
+            <input type="submit" id="startDemosButton" class="buttonsDiv" value="NEXT" style="width: 200px;" onclick="showDemographicForm()"/>
+        </div>
+        <!-- <button id="startDemosButton" class="buttonsDiv" style="display: none;" onclick="showDemographicForm()">NEXT</button> -->
+    </div>
+
+    <!-------------------------------------------->
+    <!-- SCREEN SIZE WARNING -->
+    <!-------------------------------------------->
+    <div id="resizeWarning" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.5); color: white; text-align: center; vertical-align: middle; line-height: 100vh; z-index: 1000;">
+        Your screen size is too small to view this experiment. Please increase your browser window size.
+    </div>    
+
+    <!-------------------------------------------->
+    <!-- DEMOGRAPHICS SURVEY -->
+    <!-------------------------------------------->
+    <div id="demoInfo" class="demoInfoDiv">
+        <p>Great job! You are almost done! Before completing the task, we have a few questions for you to answer about your demographic characteristics. Specifically, we are asking about gender identity, age, and race/ethnicity in order to understand how your performance may differ based on these characteristics.</p> 
+        <p style="font-weight: normal"> <i>When you are done, click the 'SUBMIT' button at the bottom of the page.</i></p>
+        
+        <form>
+            <!-- Gender Section -->
+            <fieldset>
+                <legend>Gender Identity</legend>
+                <label>
+                    <strong>Please select one option from the drop-down menu:</strong>
+                    <select id="genderList">
+                    <option>---Choose an option---</option>
+                    <option>Woman</option>
+                    <option>Man</option> 
+                    <option>Transgender Woman</option>
+                    <option>Transgender Man</option>
+                    <option>Non-binary, gender fluid, or gender non-conforming</option> 
+                    <option>None of these describe me</option>
+                    <option>Prefer not to respond</option>
+                    </select>
+                </label>
+            </fieldset>
+
+
+            <!-- Age Section -->
+            <fieldset>
+                <legend>Year of Birth</legend>
+                <label>
+                    <strong>Please select one option from the drop-down menu:</strong>
+                    <select id="ageList">
+                    <option>---Choose a birth year---</option>
+                    <!-- After 2005 -->
+                    <option>After 2005</option> 
+                    <!-- 2000s -->
+                    <option>2005</option> <option>2004</option> <option>2003</option>  <option>2002</option>  <option>2001</option>  <option>2000</option>
+                    <!-- 1990s -->
+                    <option>1999</option> <option>1998</option>  <option>1997</option>  <option>1996</option>  <option>1995</option>  <option>1994</option>  <option>1993</option>  <option>1992</option>  <option>1991</option>  <option>1990</option> 
+                    <!-- 1980s -->
+                    <option>1989</option> <option>1988</option>  <option>1987</option>  <option>1986</option>  <option>1985</option>  <option>1984</option>  <option>1983</option>  <option>1982</option>  <option>1981</option>  <option>1980</option> 
+                    <!-- 1970s -->
+                    <option>1979</option> <option>1978</option>  <option>1977</option>  <option>1976</option>  <option>1975</option>  <option>1974</option>  <option>1973</option>  <option>1972</option>  <option>1971</option>  <option>1970</option> 
+                    <!-- 1960s -->
+                    <option>1969</option> <option>1968</option>  <option>1967</option>  <option>1966</option>  <option>1965</option>  <option>1964</option>  <option>1963</option>  <option>1962</option>  <option>1961</option>  <option>1960</option> 
+                    <!-- 1950s -->
+                    <option>1959</option> <option>1958</option>  <option>1957</option>  <option>1956</option>  <option>1955</option>  <option>1954</option>  <option>1953</option>  <option>1952</option>  <option>1951</option>  <option>1950</option> 
+                    <!-- 1940s -->
+                    <option>1949</option> <option>1948</option>  <option>1947</option>  <option>1946</option>  <option>1945</option>  <option>1944</option>  <option>1943</option>  <option>1942</option>  <option>1941</option>  <option>1940</option> 
+                    <!-- 1930s -->
+                    <option>1939</option> <option>1938</option>  <option>1937</option>  <option>1936</option>  <option>1935</option>  <option>1934</option>  <option>1933</option>  <option>1932</option>  <option>1931</option>  <option>1930</option> 
+                    <!-- 1920s -->
+                    <option>1929</option> <option>1928</option>  <option>1927</option>  <option>1926</option>  <option>1925</option>  <option>1924</option>  <option>1923</option>  <option>1922</option>  <option>1921</option>  <option>1920</option> 
+                    <!-- before 1920 -->
+                    <option>Before 1920</option>  
+                    <!-- Prefer not to respond -->
+                    <option>Prefer not to respond</option>
+                    </select>
+                </label>
+            </fieldset>
+
+            <!-- RACE & ETHNICITY -->
+            <fieldset>
+                <legend>Race and Ethnicity</legend>
+                <div>
+                    <strong>Race (select all that apply):</strong>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="americanIndian" name="race" value="American Indian or Alaska Native">
+                        <label for="americanIndian">American Indian or Alaska Native</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="asian" name="race" value="Asian">
+                        <label for="asian">Asian</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="blackAfricanAmerican" name="race" value="Black or African American">
+                        <label for="asian">Black or African American</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="hispanicLatinoRace" name="race" value="Hispanic or Latino">
+                        <label for="hispanicLatinoRace">Hispanic or Latino</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="nativeHawaiian" name="race" value="Native Hawaiian or Other Pacific Islander">
+                        <label for="nativeHawaiian">Native Hawaiian or Other Pacific Islander</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="white" name="race" value="White">
+                        <label for="white">White</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="otherRace" name="race" value="Other">
+                        <label for="otherRace">Other</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="preferNotToSayRace" name="race" value="Prefer not to say">
+                        <label for="preferNotToSayRace">Prefer not to say</label>
+                    </div>
+                </div>
+                
+                <div>
+                    <br>
+                    <label for="ethnicity"><strong>Ethnicity:</strong></label>
+                    <select id="ethnicity" name="ethnicity">
+                        <option value="">---Choose an option---</option>
+                        <option value="hispanicLatino">Hispanic or Latino</option>
+                        <option value="notHispanicLatino">Not Hispanic or Latino</option>
+                        <option value="preferNotToSay">Prefer not to say</option>
+                    </select>
+                </div>
+            </fieldset>
+
+            <!-- DEVICE INFORMATION -->
+            <fieldset>
+                <legend>Device Information</legend>
+                What device did you use to select/click on targets during the task?
+                <p><i>(Please note that this is referring to target selection and not to the use of the Spacebar to submit responses)</i></p>
+
+                <div>
+                    <label for="deviceList"><strong>Please select one option from the drop-down menu:</strong></label>
+                    <select id="deviceList">
+                        <option value="">---Choose an option---</option>
+                        <option value="mouse">Mouse</option>
+                        <option value="builtInTrackpad">Built-In Trackpad</option>
+                        <option value="externalTrackpad">External Trackpad</option>
+                        <option value="touchScreen">Touch Screen</option>
+                        <option value="bluetoothSmartPen">Bluetooth Smart Pen or Stylus</option>
+                        <option value="builtInTrackball">Built-In Trackball</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+            </fieldset>
+
+            <!-- SUBMIT BUTTON -->
+            <div style="text-align: center;">
+                <input type="submit" id="button_submitDemo" class="buttonsDiv" value="SUBMIT"/>
+            </div>
+        </form>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+    <script src = "experimentDesign.js"></script>
+    <script src = "showInstructions.js"></script>
+    <script src="mainExperiment.js"></script>
+</body>
+</html>
