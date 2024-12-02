@@ -8,4 +8,4 @@ Try out this task at [http://54.224.65.24/experiments/Ts-and-Ls_v1/mainExperimen
 ](http://52.0.147.87/experiments/Ts-and-Ls_v1/mainExperiment.html)
 
 ## Live Webpage
-[View the live webpage](https://<your-username>.github.io/<repository-name>/task/index.html)
+[View the live webpage](https://audreysiqiliu.github.io/Simple-Visual-Search-Task/Ts-and-Ls_v1/index.html)
